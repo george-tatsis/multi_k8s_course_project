@@ -6,9 +6,9 @@ docker push georgetatsis/multi-client:latest
 docker push georgetatsis/multi-server:latest
 docker push georgetatsis/multi-worker:latest
 
-docker push georgetatsis/multi-client:GIT_SHA
-docker push georgetatsis/multi-server:GIT_SHA
-docker push georgetatsis/multi-worker:GIT_SHA
+docker push georgetatsis/multi-client:$GIT_SHA
+docker push georgetatsis/multi-server:$GIT_SHA
+docker push georgetatsis/multi-worker:$GIT_SHA
 
 kubectl apply -f k8s
 kubectl set image deployments/server-deployment server=georgetatsis/multi-server:$GIT_SHA

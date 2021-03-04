@@ -33,4 +33,5 @@ spec:
                   key: PGPASSWORD
           volumeMounts:
             - name: postgres-storage
-              mountPath: /var/lib/postgresql/Data
+              mountPath: /var/lib/postgresql/data
+              subPath: postgres

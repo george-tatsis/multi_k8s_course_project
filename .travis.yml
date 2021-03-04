@@ -10,10 +10,10 @@ before_install:
   - curl https://sdk.cloud.google.com | bash > /dev/null;
   - source $HOME/google-cloud-sdk/path.bash.inc
   - gcloud components update kubectl
-  - gcloud auth activate-service-account --key-file service-account.json
+  - gcloud auth activate-service-account travis-deployer@multi-k8s-course-project.iam.gserviceaccount.com --key-file=service-account.json --project=multi-k8s-course-project
   - gcloud config set project multi-k8s-course-project
   - gcloud config set compute/zone europe-west4-b 
-  - gcloud container clusters get-credentials multi-k8s-cluster
+  - gcloud container clusters get-credentials mulit-k8s-cluster
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t georgetatsis/react-test -f ./client/Dockerfile.dev ./client
 
